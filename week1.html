@@ -1,23 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Week 1: Principles and Practices - Jaafar Alnoor</title>
+		<title>Week 1: Getting Started - Jaafar Alnoor</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 		
 		<style>
-			/* Your existing week1 styles here */
 			.week-date { color: #666; font-style: italic; }
-			.less-bold { font-weight: 400; }
 			.image-caption { text-align: center; font-style: italic; color: #666; margin-top: -10px; }
 			
-			/* In-Page Navigation Box CSS */
+			/* Simple navigation box */
 			.inpage-nav-box {
 				float: right;
-				position: -webkit-sticky;
 				position: sticky;
 				top: 20px;
 				width: 220px;
@@ -26,15 +22,10 @@
 				border: 1px solid #e0e0e0;
 				padding: 15px;
 				border-radius: 8px;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 				font-size: 0.9em;
-				z-index: 1000;
 			}
 
 			.inpage-nav-box h4 {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
 				margin-top: 0;
 				margin-bottom: 12px;
 				font-size: 1em;
@@ -44,40 +35,14 @@
 				padding-bottom: 8px;
 			}
 
-			.nav-toggle-button {
-				background: none;
-				border: 1px solid #cccccc;
-				color: #333333;
-				cursor: pointer;
-				font-size: 0.8em;
-				font-weight: bold;
-				padding: 1px 6px;
-				border-radius: 4px;
-				line-height: 1.2;
-				margin-left: 5px;
-			}
-
-			.nav-toggle-button:hover {
-				background-color: #e9e9e9;
-				border-color: #bbbbbb;
-			}
-
 			.inpage-nav-box ul {
 				list-style: none;
 				padding: 0;
 				margin: 0;
 			}
 
-			.inpage-nav-box ul.collapsed {
-				display: none;
-			}
-
 			.inpage-nav-box ul li {
 				margin-bottom: 8px;
-			}
-
-			.inpage-nav-box ul li:last-child {
-				margin-bottom: 0;
 			}
 
 			.inpage-nav-box ul li a {
@@ -89,7 +54,6 @@
 
 			.inpage-nav-box ul li a:hover {
 				text-decoration: underline;
-				color: #1c6691;
 			}
 
 			@media screen and (max-width: 1200px) {
@@ -100,157 +64,145 @@
 					margin-bottom: 20px;
 				}
 			}
+			
+			/* Simple mission boxes */
+			.mission-box {
+				background: #f9f9f9;
+				border-left: 4px solid #2980B9;
+				padding: 15px;
+				margin: 20px 0;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
-		<!-- Wrapper -->
 		<div id="wrapper">
-			<!-- Main Content -->
 			<div id="main">
 				<div class="inner">
 					<!-- Header -->
 					<header id="header">
 						<a href="index.html" class="logo"><strong>UniPod SouthSudan |</strong> Jaafar Alnoor</a>
 						<ul class="icons">
-							<li><a href="https://github.com/JaafarAlnoor" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://linkedin.com/in/jaafar-alnoor" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="mailto:jaawish@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://github.com/jalnoor" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:jaafar@email.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 					</header>
 
 					<!-- Week 1 Content -->
 					<section>
 						<div class="inpage-nav-box">
-							<h4>
-								On This Page
-								<button class="nav-toggle-button" aria-expanded="true" aria-controls="nav-list-week1" title="Toggle navigation list">-</button>
-							</h4>
-							<ul id="nav-list-week1">
+							<h4>On This Page</h4>
+							<ul>
 								<li><a href="#intro-section">Introduction</a></li>
-								<li><a href="#process-docs-section">Process Documentation</a></li>
-								<li><a href="#reflection-section">Reflection</a></li>
+								<li><a href="#what-i-did">What I Did This Week</a></li>
+								<li><a href="#what-i-learned">What I Learned</a></li>
+								<li><a href="#my-thoughts">My Thoughts</a></li>
 							</ul>
 						</div>
 
 						<header class="main">
-							<h1>Week 1: Practices</h1>
-							<p class="week-date">Date: September 29  - October 4, 2025</p>
+							<h1>Week 1: Getting Started</h1>
+							<p class="week-date">Date: [Add start date] - [Add end date]</p>
 						</header>
 
-						<!-- Summary of the weekly task -->
+						<!-- Simple Summary -->
 						<div class="box" id="quick-summary">
 							<header class="major">
-								<h3>Quick Summary</h3>
+								<h3>This Week In A Nutshell</h3>
 							</header>
-							<ul class="alt">
-								<li><strong>Skills Learned:</strong> Git version control, GitHub repository management, SSH authentication.</li>
-								<li><strong>Digital Tools and Software Used:</strong> Git, GitHub, SSH, Terminal, VS Code, Notepad++.</li>
-								<li><strong>Topics:</strong> Distributed version control, repository creation, commit workflows, remote collaboration, 									documentation.</li>
-								<li><strong>Key Concepts:</strong> Git commits, SSH authentication, push/pull workflows.</li>
-								<li><strong>Challenges Faced:</strong> SSH key setup, understanding Git workflow, mastering command line 										operations.</li>
+							<ul>
+								<li><strong>What I learned:</strong> How to set up GitHub, safety rules, maker mindset</li>
+								<li><strong>Tools I used:</strong> GitHub, WhatsApp, web browser</li>
+								<li><strong>Main ideas:</strong> Safety first, learning by doing, it's okay to make mistakes</li>
+								<li><strong>Challenges:</strong> Understanding the big picture, learning new tools</li>
 							</ul>
 						</div>
-						<!-- ... all your existing week1 content bellow... -->
-						<div id="Notes" class="tab-content active">
+
+						<div id="Notes">
 							<div>
-								&nbsp;
 								<!-- Introduction -->
 								<header class="major">
-								<h2 id="intro-section">Introduction</h2>
+									<h2 id="intro-section">Welcome to My Maker Journey</h2>
 								</header>
-								<p>This week focused on establishing a robust version control system using Git and GitHub. The goal was to create a 									comprehensive documentation system for tracking project development throughout the training program.</p>
-								<p>Version control is fundamental to technical projects, enabling tracking of design iterations, collaboration with 									peers, and maintaining a complete project history - all essential for replicable results and knowledge sharing.</p>
-
-								<header class="major">
-								<h2 id="process-docs-section">Process Documentation</h2>
-								</header>
-
-<h3>1. System Setup & Configuration</h3>
-<p>Began with system configuration for version control:</p>
-<pre><code class="language-bash"># Git configuration
-git config --global user.name "JaafarAlnoor"
-git config --global user.email "jaawish@gmail.com"
-git config --global init.default branch main
-</li>
-# Verify installation
-git --version</code></pre>
-
-<h3>2. SSH Key Generation & GitHub Setup</h3>
-<p>Created secure SSH keys for GitHub authentication:</p>
-<pre><code class="language-bash"># Generate ED25519 SSH key
-ssh-keygen -t ed25519 -C "your-email@gmail.com"
-</li>
-# Copy public key to clipboard
-cat ~/.ssh/id_ed25519.pub
-</li>
-# Test SSH connection to GitHub
-ssh -T git@github.com</code></pre>
-<li><p>Added the public key to GitHub SSH settings for secure, password-less authentication.</p></li>
-
-<h3>3. Repository Creation & Initialization</h3>
-<li><p>Created the project repository structure following documentation standards:</p></li>
-<pre><code class="language-bash"># Initialize local repository
-mkdir unipod-training
-cd unipod-training
-git init
-</li>
-# Create basic structure
-mkdir docs images assets
-touch README.md .gitignore
-</li>
-# Initial commit
-git add .
-git commit -m "Initial commit: Project structure setup"</code></pre>
-
-<h3>4. Remote Repository Connection</h3>
-<p>Connected local repository to GitHub using SSH:</p>
-<pre><code class="language-bash"># Add remote origin using SSH
-git remote add origin git@github.com:username/unipod-training.git
-</li>
-# Verify remote
-git remote -v
-</li>
-# Push to main branch
-git branch -M main
-git push -u origin main</code></pre>
-<h3>5. Basic Git Workflow Practice</h3>
-<p>Implemented the standard Git workflow for documentation:</p>
-<pre><code class="language-bash"># Check status of changes
-git status
-</li>
-# Stage specific files
-git add week1/
-</li>
-# Commit with descriptive message
-git commit -m "Add week1 documentation: version control and SSH setup"
-</li>
-# Push to remote repository
-git push origin main</code></pre>
-
+								<p>This is my first week in the UniPod Digital Fabrication Program. Over the next 12 months, I will learn how to turn ideas into real things I can build and use.</p>
 								
-						
+								<p>This week was about getting ready. I learned the basic rules, met other students, and set up my online accounts. It's like preparing for a big adventure!</p>
+
+								<!-- What I Did -->
+								<header class="major">
+									<h2 id="what-i-did">What I Did This Week</h2>
+								</header>
+								
+								<div class="mission-box">
+									<h3>Mission 1: Safety Check</h3>
+									<p>I looked around our workspace and found:</p>
+									<ul>
+										<li>3 safety problems to fix</li>
+										<li>3 good safety practices already in place</li>
+										<li>Passed the safety test</li>
+									</ul>
+								</div>
+
+								<div class="mission-box">
+									<h3>Mission 2: Online Setup</h3>
+									<p>I created my online accounts:</p>
+									<ul>
+										<li>GitHub account (username: jalnoor)</li>
+										<li>Joined WhatsApp group</li>
+										<li>Set up my profile with photo and information</li>
+									</ul>
+								</div>
+
+								<div class="mission-box">
+									<h3>Mission 3: Meet Everyone</h3>
+									<p>I introduced myself to the group:</p>
+									<ul>
+										<li>"Hi, I'm Jaafar Alnoor. I want to build a Smart Energy Monitoring System!"</li>
+										<li>Talked to 3 other students about their projects</li>
+										<li>Started making new friends</li>
+									</ul>
+								</div>
+
+								<!-- What I Learned -->
+								<header class="major">
+									<h2 id="what-i-learned">What I Learned</h2>
+								</header>
+								
+								<h3>Important Rules</h3>
+								<ul>
+									<li>Always wear safety glasses in the workshop</li>
+									<li>Ask questions when I don't understand</li>
+									<li>It's better to ask than to make a mistake</li>
+								</ul>
+								
+								<h3>New Skills</h3>
+								<ul>
+									<li>How to use GitHub to save my work</li>
+									<li>How to talk with other makers online</li>
+									<li>How to look for safety problems</li>
+								</ul>
+
 								<!-- Reflection -->
 								<header class="major">
-								<h2 id="reflection-section">Reflection</h2>
+									<h2 id="my-thoughts">My Thoughts About Week 1</h2>
 								</header>
-								<h3>Learning Outcomes</h3>
-<p>This week provided essential foundation skills for the entire training program. Understanding Git and GitHub is crucial for maintaining proper documentation throughout the technical learning process. The SSH setup, while initially complex, provides a more secure and efficient workflow than password-based authentication.</p>
-<h3>Technical Challenges</h3>
-<p>The main challenges included:</p>
-<ul>
-<li>Understanding the difference between Git (local) and GitHub (remote)</li>
-<li>Proper SSH key generation and permissions setup</li>
-<li>Mastering the Git workflow: add → commit → push</li>
-<li>Learning Markdown syntax for documentation</li>
-</ul>
 								
+								<p>This first week made me excited about learning. The teachers said it's okay to make mistakes, which made me feel less nervous.</p>
+								
+								<p>Setting up my GitHub account was fun. It feels like I'm starting a journey that everyone can see. My username is "jalnoor" - J from Jaafar and Alnoor.</p>
+								
+								<p>The safety check was interesting. At first, everything looked safe. But when I looked carefully, I found small problems I didn't see before.</p>
+								
+								<p>I liked meeting the other students. Everyone wants to build different things. Some want to make robots, others want to build smart homes. I want to make a system that monitors electricity use.</p>
+								
+								<p>Next week we start learning about websites and documentation. I'm ready to learn more!</p>
 							</div>
 						</div>
 					</section>
 				</div>
 			</div>
 
-			<!-- Sidebar (will be loaded automatically by sidebar-loader.js) -->
+			<!-- Sidebar -->
 			<div id="sidebar">
 				<!-- Sidebar content will be injected here -->
 			</div>
@@ -262,55 +214,6 @@ git push origin main</code></pre>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="assets/js/sidebar-loader.js"></script> <!-- Universal sidebar loader -->
-		
-		<!-- Page-specific JavaScript -->
-		<script>
-			// Initialize page-specific functionality
-			document.addEventListener('DOMContentLoaded', function() {
-				// Tab functionality
-				const tabButtons = document.querySelectorAll('.tab-button');
-				tabButtons.forEach(button => {
-					button.addEventListener('click', function() {
-						const tabName = this.getAttribute('data-tab');
-						
-						// Update buttons
-						tabButtons.forEach(btn => btn.classList.remove('active'));
-						this.classList.add('active');
-						
-						// Update content
-						document.querySelectorAll('.tab-content').forEach(tab => {
-							tab.style.display = 'none';
-							tab.classList.remove('active');
-						});
-						
-						const activeTab = document.getElementById(tabName);
-						if (activeTab) {
-							activeTab.style.display = 'block';
-							activeTab.classList.add('active');
-						}
-					});
-				});
-				
-				// Navigation toggles
-				const navToggles = document.querySelectorAll('.nav-toggle-button');
-				navToggles.forEach(toggle => {
-					toggle.addEventListener('click', function() {
-						const navList = this.closest('.inpage-nav-box').querySelector('ul');
-						if (navList) {
-							navList.classList.toggle('collapsed');
-							this.textContent = navList.classList.contains('collapsed') ? '+' : '-';
-							this.setAttribute('aria-expanded', !navList.classList.contains('collapsed'));
-						}
-					});
-				});
-				
-				// Set first tab as active by default
-				const firstTab = document.querySelector('.tab-content.active');
-				if (firstTab) {
-					firstTab.style.display = 'block';
-				}
-			});
-		</script>
+		<script src="assets/js/sidebar-loader.js"></script>
 	</body>
 </html>
