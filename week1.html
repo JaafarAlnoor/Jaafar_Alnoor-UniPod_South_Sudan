@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Week 1: Principles and Practices - your_name</title>
+		<title>Week 1: Principles and Practices - Jaafar Alnoor</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -110,11 +110,11 @@
 				<div class="inner">
 					<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>UNIPOD Rwanda |</strong> your_name</a>
+						<a href="index.html" class="logo"><strong>UniPod SouthSudan |</strong> Jaafar Alnoor</a>
 						<ul class="icons">
-							<li><a href="your-github-link" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="your-linkedin-link" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="mailto:your-email@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://github.com/JaafarAlnoor" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://linkedin.com/in/jaafar-alnoor" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:jaawish@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 					</header>
 
@@ -134,7 +134,7 @@
 
 						<header class="main">
 							<h1>Week 1: Practices</h1>
-							<p class="week-date">Date: From - To (include Dates)</p>
+							<p class="week-date">Date: September 29  - October 4, 2025</p>
 						</header>
 
 						<!-- Summary of the weekly task -->
@@ -143,11 +143,11 @@
 								<h3>Quick Summary</h3>
 							</header>
 							<ul class="alt">
-								<li><strong>Skills Learned:</strong> </li>
-								<li><strong>Digital Tools and Software Used:</strong> </li>
-								<li><strong>Topics:</strong> </li>
-								<li><strong>Key Concepts:</strong> </li>
-								<li><strong>Challenges Faced:</strong> </li>
+								<li><strong>Skills Learned:</strong> Git version control, GitHub repository management, SSH authentication.</li>
+								<li><strong>Digital Tools and Software Used:</strong> Git, GitHub, SSH, Terminal, VS Code, Notepad++.</li>
+								<li><strong>Topics:</strong> Distributed version control, repository creation, commit workflows, remote collaboration, 									documentation.</li>
+								<li><strong>Key Concepts:</strong> Git commits, SSH authentication, push/pull workflows.</li>
+								<li><strong>Challenges Faced:</strong> SSH key setup, understanding Git workflow, mastering command line 										operations.</li>
 							</ul>
 						</div>
 						<!-- ... all your existing week1 content bellow... -->
@@ -158,18 +158,91 @@
 								<header class="major">
 								<h2 id="intro-section">Introduction</h2>
 								</header>
-								<p>Add your introduction</p>
+								<p>This week focused on establishing a robust version control system using Git and GitHub. The goal was to create a 									comprehensive documentation system for tracking project development throughout the training program.</p>
+								<p>Version control is fundamental to technical projects, enabling tracking of design iterations, collaboration with 									peers, and maintaining a complete project history - all essential for replicable results and knowledge sharing.</p>
 
 								<header class="major">
 								<h2 id="process-docs-section">Process Documentation</h2>
 								</header>
-								<p>Add the process documentation of this week task</p>
+
+<h3>1. System Setup & Configuration</h3>
+<p>Began with system configuration for version control:</p>
+<pre><code class="language-bash"># Git configuration
+git config --global user.name "JaafarAlnoor"
+git config --global user.email "jaawish@gmail.com"
+git config --global init.default branch main
+</li>
+# Verify installation
+git --version</code></pre>
+
+<h3>2. SSH Key Generation & GitHub Setup</h3>
+<p>Created secure SSH keys for GitHub authentication:</p>
+<pre><code class="language-bash"># Generate ED25519 SSH key
+ssh-keygen -t ed25519 -C "your-email@gmail.com"
+</li>
+# Copy public key to clipboard
+cat ~/.ssh/id_ed25519.pub
+</li>
+# Test SSH connection to GitHub
+ssh -T git@github.com</code></pre>
+<li><p>Added the public key to GitHub SSH settings for secure, password-less authentication.</p></li>
+
+<h3>3. Repository Creation & Initialization</h3>
+<li><p>Created the project repository structure following documentation standards:</p></li>
+<pre><code class="language-bash"># Initialize local repository
+mkdir unipod-training
+cd unipod-training
+git init
+</li>
+# Create basic structure
+mkdir docs images assets
+touch README.md .gitignore
+</li>
+# Initial commit
+git add .
+git commit -m "Initial commit: Project structure setup"</code></pre>
+
+<h3>4. Remote Repository Connection</h3>
+<p>Connected local repository to GitHub using SSH:</p>
+<pre><code class="language-bash"># Add remote origin using SSH
+git remote add origin git@github.com:username/unipod-training.git
+</li>
+# Verify remote
+git remote -v
+</li>
+# Push to main branch
+git branch -M main
+git push -u origin main</code></pre>
+<h3>5. Basic Git Workflow Practice</h3>
+<p>Implemented the standard Git workflow for documentation:</p>
+<pre><code class="language-bash"># Check status of changes
+git status
+</li>
+# Stage specific files
+git add week1/
+</li>
+# Commit with descriptive message
+git commit -m "Add week1 documentation: version control and SSH setup"
+</li>
+# Push to remote repository
+git push origin main</code></pre>
+
+								
 						
 								<!-- Reflection -->
 								<header class="major">
 								<h2 id="reflection-section">Reflection</h2>
 								</header>
-								<p>Add your reflection</p>
+								<h3>Learning Outcomes</h3>
+<p>This week provided essential foundation skills for the entire training program. Understanding Git and GitHub is crucial for maintaining proper documentation throughout the technical learning process. The SSH setup, while initially complex, provides a more secure and efficient workflow than password-based authentication.</p>
+<h3>Technical Challenges</h3>
+<p>The main challenges included:</p>
+<ul>
+<li>Understanding the difference between Git (local) and GitHub (remote)</li>
+<li>Proper SSH key generation and permissions setup</li>
+<li>Mastering the Git workflow: add → commit → push</li>
+<li>Learning Markdown syntax for documentation</li>
+</ul>
 								
 							</div>
 						</div>
