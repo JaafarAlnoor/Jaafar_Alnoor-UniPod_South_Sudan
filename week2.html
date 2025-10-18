@@ -161,9 +161,10 @@
 								<p>This week focused on establishing a robust version control system using Git and GitHub. The goal was to create a 									comprehensive documentation system for tracking project development throughout the training program.</p>
 								<p>Version control is fundamental to technical projects, enabling tracking of design iterations, collaboration with 									peers, and maintaining a complete project history - all essential for replicable results and knowledge sharing.</p>
 
-								<header class="major">
-   								<h2 id="process-docs-section">Process Documentation</h2>
-								</header>
+								<!-- Process Documentation -->
+<header class="major">
+    <h2 id="process-docs-section">Process Documentation</h2>
+</header>
 
 <h3>1. System Setup & Configuration</h3>
 <p>Began with system configuration for version control:</p>
@@ -171,7 +172,7 @@
 git config --global user.name "JaafarAlnoor"
 git config --global user.email "jaawish@gmail.com"
 git config --global init.default branch main
-</li>
+
 # Verify installation
 git --version</code></pre>
 
@@ -179,13 +180,22 @@ git --version</code></pre>
 <p>Created secure SSH keys for GitHub authentication:</p>
 <pre><code class="language-bash"># Generate ED25519 SSH key
 ssh-keygen -t ed25519 -C "your-email@gmail.com"
-</li>
+
 # Copy public key to clipboard
 cat ~/.ssh/id_ed25519.pub
-</li>
+
 # Test SSH connection to GitHub
 ssh -T git@github.com</code></pre>
 <li><p>Added the public key to GitHub SSH settings for secure, password-less authentication.</p></li>
+
+<!-- Screenshot Section -->
+<div class="box">
+    <h4>SSH Key Setup Verification</h4>
+    <div class="image-container">
+        <img src="images/ssh-setup-verification.jpg" alt="SSH key setup verification in terminal" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+        <p class="image-caption">Figure 1: Successful SSH key generation and GitHub connection verification</p>
+    </div>
+</div>
 
 <h3>3. Repository Creation & Initialization</h3>
 <li><p>Created the project repository structure following documentation standards:</p></li>
@@ -193,11 +203,11 @@ ssh -T git@github.com</code></pre>
 mkdir unipod-training
 cd unipod-training
 git init
-</li>
+
 # Create basic structure
 mkdir docs images assets
 touch README.md .gitignore
-</li>
+
 # Initial commit
 git add .
 git commit -m "Initial commit: Project structure setup"</code></pre>
@@ -206,26 +216,45 @@ git commit -m "Initial commit: Project structure setup"</code></pre>
 <p>Connected local repository to GitHub using SSH:</p>
 <pre><code class="language-bash"># Add remote origin using SSH
 git remote add origin git@github.com:username/unipod-training.git
-</li>
+
 # Verify remote
 git remote -v
-</li>
+
 # Push to main branch
 git branch -M main
 git push -u origin main</code></pre>
+
+<!-- Repository Screenshot -->
+<div class="box">
+    <h4>GitHub Repository Setup</h4>
+    <div class="image-container">
+        <img src="images/github-repository-setup.jpg" alt="GitHub repository initial setup" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+        <p class="image-caption">Figure 2: Initial project repository structure on GitHub</p>
+    </div>
+</div>
+
 <h3>5. Basic Git Workflow Practice</h3>
 <p>Implemented the standard Git workflow for documentation:</p>
 <pre><code class="language-bash"># Check status of changes
 git status
-</li>
+
 # Stage specific files
 git add week1/
-</li>
+
 # Commit with descriptive message
 git commit -m "Add week1 documentation: version control and SSH setup"
-</li>
+
 # Push to remote repository
 git push origin main</code></pre>
+
+<!-- Git Workflow Screenshot -->
+<div class="box">
+    <h4>Git Workflow Execution</h4>
+    <div class="image-container">
+        <img src="images/git-workflow-terminal.jpg" alt="Git workflow commands in terminal" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+        <p class="image-caption">Figure 3: Git add, commit, and push workflow execution</p>
+    </div>
+</div>
 
 								
 						
