@@ -6,19 +6,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		
 		<style>
 			.week-date { color: #666; font-style: italic; }
 			.less-bold { font-weight: 400; }
 			.image-caption { text-align: center; font-style: italic; color: #666; margin-top: -10px; }
 			
-			/* Fixed In-Page Navigation Box CSS */
+			/* In-Page Navigation Box CSS */
 			.inpage-nav-box {
 				float: right;
-				position: -webkit-sticky !important;
-				position: sticky !important;
-				top: 20px !important;
+				position: -webkit-sticky;
+				position: sticky;
+				top: 20px;
 				width: 220px;
 				margin-bottom: 1.5em;
 				background-color: #f8f8f8;
@@ -27,10 +27,7 @@
 				border-radius: 8px;
 				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 				font-size: 0.9em;
-				z-index: 1000 !important;
-				height: fit-content;
-				max-height: 80vh;
-				overflow-y: auto;
+				z-index: 1000;
 			}
 
 			.inpage-nav-box h4 {
@@ -44,10 +41,6 @@
 				color: #3d4449;
 				border-bottom: 1px solid #e0e0e0;
 				padding-bottom: 8px;
-				position: sticky;
-				top: 0;
-				background: #f8f8f8;
-				z-index: 1001;
 			}
 
 			.nav-toggle-button {
@@ -98,39 +91,108 @@
 				color: #1c6691;
 			}
 
-			/* Ensure parent containers don't break sticky positioning */
-			#main, #main .inner, #main .inner section {
-				position: relative;
-				overflow: visible;
-			}
-
-			/* Fix for image layout */
-			figure {
-				max-width: 600px;
-				border: 1px solid #ddd;
-				padding: 10px;
-				margin: 20px 0;
-			}
-
-			figure img {
-				max-width: 100%;
-				height: auto;
-				display: block;
-			}
-
 			@media screen and (max-width: 1200px) {
 				.inpage-nav-box {
 					float: none;
-					position: static !important;
+					position: static;
 					width: 100%;
 					margin-bottom: 20px;
-					max-height: none;
 				}
 			}
-
-			/* Ensure no transforms on parent elements */
-			#wrapper, #main, .inner, section {
-				transform: none !important;
+			
+			/* Custom styles for design thinking process */
+			.process-step {
+				border-left: 4px solid #2980B9;
+				padding-left: 1.5rem;
+				margin: 2rem 0;
+				background: #f8fafc;
+				padding: 1.5rem;
+				border-radius: 0 8px 8px 0;
+			}
+			
+			.process-step h3 {
+				margin-top: 0;
+				color: #2980B9;
+			}
+			
+			.design-phase {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 8px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				margin-bottom: 2rem;
+			}
+			
+			.empathy-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			
+			.empathy-quadrant {
+				padding: 1rem;
+				border-radius: 6px;
+				background: white;
+				border: 1px solid #e2e8f0;
+			}
+			
+			.empathy-quadrant h4 {
+				margin-top: 0;
+				color: #2d3748;
+				border-bottom: 1px solid #e2e8f0;
+				padding-bottom: 0.5rem;
+			}
+			
+			.idea-list {
+				columns: 2;
+				column-gap: 2rem;
+			}
+			
+			.idea-list li {
+				break-inside: avoid;
+				margin-bottom: 0.5rem;
+				padding: 0.5rem;
+				background: #f7fafc;
+				border-radius: 4px;
+			}
+			
+			.prototype-features {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			
+			.feature-card {
+				background: white;
+				padding: 1rem;
+				border-radius: 6px;
+				border: 1px solid #e2e8f0;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+			}
+			
+			.feature-card i {
+				color: #2980B9;
+				margin-right: 0.5rem;
+			}
+			
+			.key-insight {
+				background: #e6f7ff;
+				border-left: 4px solid #1890ff;
+				padding: 1rem 1.5rem;
+				margin: 1.5rem 0;
+				border-radius: 0 4px 4px 0;
+			}
+			
+			@media screen and (max-width: 768px) {
+				.empathy-grid, .prototype-features {
+					grid-template-columns: 1fr;
+				}
+				
+				.idea-list {
+					columns: 1;
+				}
 			}
 		</style>
 	</head>
@@ -169,40 +231,17 @@
 							<p class="week-date">Date: October 8 - October 13, 2025</p>
 						</header>
 
-						<!-- Quick Summary Section -->
+						<!-- Summary of the weekly task -->
 						<div class="box" id="quick-summary">
 							<header class="major">
 								<h3>Quick Summary</h3>
 							</header>
-							<ul>
-								<li><strong>Project Title:</strong> Smart Shoe Rack System for Mosque Entrances</li>
-								<li><strong>Objective:</strong> To apply the Design Thinking process to design a human-centered solution that securely organizes shoes at mosque entrances, preventing theft and reducing anxiety for worshippers.</li>
-								<li><strong>Outcome:</strong> A conceptual prototype for "The SecureShelf," a modular shelving unit with token-operated locking compartments.</li>
-							</ul>
-
-							<h3><strong>Skills Learned:</strong></h3>
-							<ul>
-								<li><strong>Human-Centered Research:</strong> Conducting observational research and developing user empathy.</li>
-								<li><strong>Problem Framing:</strong> Synthesizing user data into a clear, actionable Problem Statement using a specific formula.</li>
-								<li><strong>Divergent & Convergent Thinking:</strong> Brainstorming a wide range of ideas (ideation) and then selecting the most promising one using defined criteria.</li>
-								<li><strong>Rapid Prototyping:</strong> Communicating a complex idea through simple, annotated sketches.</li>
-								<li><strong>Iterative Mindset:</strong> Understanding that design is a non-linear process of learning and refinement.</li>
-							</ul>
-
-							<h3><strong>Digital Tools and Software Used:</strong></h3>
-							<ul>
-								<li><strong>Primary Tools:</strong> Pen and Paper (for empathy maps, brainstorming, and sketching).</li>
-								<li><strong>Conceptual Tools:</strong> Empathy Map, Problem Statement Formula, Feasibility-Desirability-Viability Framework.</li>
-							</ul>
-
-							<h3><strong>Topics:</strong></h3>
-							<ul>
-								<li>Design Thinking Methodology</li>
-								<li>User Empathy and Research</li>
-								<li>Problem Definition</li>
-								<li>Creative Ideation and Brainstorming</li>
-								<li>Solution Selection and Prioritization</li>
-								<li>Low-Fidelity Prototyping (Sketching)</li>
+							<ul class="alt">
+								<li><strong>Skills Learned:</strong> Human-Centered Research, Problem Framing, Divergent & Convergent Thinking, Rapid Prototyping, Iterative Mindset</li>
+								<li><strong>Digital Tools and Software Used:</strong> Pen and Paper, Empathy Map, Problem Statement Formula, Feasibility-Desirability-Viability Framework</li>
+								<li><strong>Topics:</strong> Design Thinking Methodology, User Empathy and Research, Problem Definition, Creative Ideation and Brainstorming, Solution Selection and Prioritization, Low-Fidelity Prototyping</li>
+								<li><strong>Key Concepts:</strong> Empathize, Define, Ideate, Prototype, Test, User-Centered Design</li>
+								<li><strong>Challenges Faced:</strong> Balancing creativity with practicality, synthesizing user insights into actionable problem statements, selecting the most promising solution from multiple options</li>
 							</ul>
 						</div>
 
@@ -212,58 +251,190 @@
 								<header class="major">
 									<h2 id="intro-section">Introduction</h2>
 								</header>
-								<p>This project involved participating in a condensed Design Thinking sprint to address a common issue in community spaces: the disorganized and insecure storage of personal belongings. The focus was on designing a "Smart Shoe Rack System" for mosques to prevent theft ("anti-stolling"). The goal was not to build a final product but to learn and apply the human-centered process of Design Thinking, moving from initial user empathy to a tangible prototype concept.</p>
+								<p>This project involved participating in a condensed Design Thinking sprint to address a common issue in community spaces: the disorganized and insecure storage of personal belongings. The focus was on designing a "Secure Shoe Rack System" for mosques to prevent theft. The goal was not to build a final product but to learn and apply the human-centered process of Design Thinking, moving from initial user empathy to a tangible prototype concept.</p>
+								
+								<div class="key-insight">
+									<strong>Key Insight:</strong> The real problem wasn't just stolen shoes, but the anxiety and distraction this caused for worshippers, affecting their spiritual experience.
+								</div>
 							
 								<header class="major">
 									<h2 id="process-docs-section">Process Documentation</h2>
 								</header>
 								
-								<p>The process followed the five stages of Design Thinking in a sprint format:</p>
+								<p>The process followed the five stages of Design Thinking in a sprint format. This human-centered approach ensured our solution would address real user needs rather than just technical specifications.</p>
 								
-								<div>
-									<p><strong>1. Empathize:</strong> The process began by observing and understanding the user (the worshipper). An Empathy Map was used to document what users Say, Do, Think, and Feel, revealing deep-seated anxiety and distraction caused by the current chaotic shoe situation.</p>
+								<div class="design-phase">
+									<h3>1. Empathize: Understanding the User Experience</h3>
+									<p>The process began by observing and understanding the user (the worshipper). An Empathy Map was used to document what users Say, Do, Think, and Feel, revealing deep-seated anxiety and distraction caused by the current chaotic shoe situation.</p>
+
+									<div class="empathy-grid">
+										<div class="empathy-quadrant">
+											<h4>SAY</h4>
+											<ul>
+												<li>"I hope my shoes are still here after prayer"</li>
+												<li>"Where should I put my shoes?"</li>
+												<li>"I'll just wear cheaper shoes to the mosque"</li>
+											</ul>
+										</div>
+										<div class="empathy-quadrant">
+											<h4>DO</h4>
+											<ul>
+												<li>Hide shoes in corners</li>
+												<li>Place shoes far from entrance</li>
+												<li>Check on shoes during prayer</li>
+												<li>Rush out after prayer to retrieve shoes</li>
+											</ul>
+										</div>
+										<div class="empathy-quadrant">
+											<h4>THINK</h4>
+											<ul>
+												<li>"Someone might take my shoes by mistake"</li>
+												<li>"Are my shoes safe here?"</li>
+												<li>"I wish there was a better system"</li>
+											</ul>
+										</div>
+										<div class="empathy-quadrant">
+											<h4>FEEL</h4>
+											<ul>
+												<li>Anxious about shoe security</li>
+												<li>Distracted during prayer</li>
+												<li>Frustrated with the disorganization</li>
+												<li>Worried about losing expensive footwear</li>
+											</ul>
+										</div>
+									</div>
 
 									<figure>
-										<img src="images/empathy-map.jpg" alt="Empathy Map for a Typical Worshipper showing Say, Do, Think, Feel quadrants" style="width: 100%;">
+										<img src="images/empathy-map.jpg" alt="Empathy Map for a Typical Worshipper showing Say, Do, Think, Feel 										quadrants" style="width: 100%;">
 										<figcaption>Figure 1: Empathy Map for a Typical Worshipper</figcaption>
 									</figure>
 								</div>
 								
-								<p><strong>2. Define:</strong> Insights from the empathy stage were synthesized into a clear Problem Statement: "A Worshipper needs a way to securely and efficiently store their shoes before prayer because the current free-for-all system causes anxiety about theft and loss, which distracts from their spiritual focus."</p>
+								<div class="design-phase">
+									<h3>2. Define: Synthesizing the Core Problem</h3>
+									<p>Insights from the empathy stage were synthesized into a clear Problem Statement using the formula: [User] needs to [user's need] because [insight].</p>
+									
+									<div class="key-insight">
+										<strong>Problem Statement:</strong> "A Worshipper needs a way to securely and efficiently store their shoes before prayer because the current free-for-all system causes anxiety about theft and loss, which distracts from their spiritual focus."
+									</div>
+									
+									<p>This problem statement shifted the focus from "preventing shoe theft" to "enabling spiritual focus through secure storage," which fundamentally changed our approach to the solution.</p>
+								</div>
 
-								<p><strong>3. Ideate:</strong> A timed brainstorming session generated over 12 diverse solutions, ranging from simple numbered shelves to a high-tech robotic "shoe hotel." The rule was "quantity over quality" to encourage creative freedom.</p>
+								<div class="design-phase">
+									<h3>3. Ideate: Generating Creative Solutions</h3>
+									<p>A timed brainstorming session generated over 12 diverse solutions, ranging from simple numbered shelves to high-tech automated systems. The rule was "quantity over quality" to encourage creative freedom without judgment.</p>
 
-								<figure>
-									<img src="images/brainstorming-ideas.jpg" alt="List of 10+ ideas for shoe storage solutions including lockers, QR codes, and conveyor belts" style="width: 100%;">
-									<figcaption>Figure 2: Brainstorming List of 10+ Ideas</figcaption>
-								</figure>
+									<ul class="idea-list">
+										<li><strong>Numbered shelves</strong> with matching tokens</li>
+										<li><strong>Lock and key compartments</strong> for individual storage</li>
+										<li><strong>QR code system</strong> with smartphone integration</li>
+										<li><strong>Biometric lockers</strong> using fingerprint recognition</li>
+										<li><strong>Color-coded system</strong> with matching wristbands</li>
+										<li><strong>Automated shoe conveyor</strong> with retrieval tickets</li>
+										<li><strong>Smart shelves</strong> with weight sensors</li>
+										<li><strong>Community honor system</strong> with monitored area</li>
+										<li><strong>Transparent lockers</strong> for visual verification</li>
+										<li><strong>Modular rack system</strong> with expandable capacity</li>
+										<li><strong>Mobile app integration</strong> for remote monitoring</li>
+										<li><strong>Traditional lockers</strong> with combination locks</li>
+									</ul>
 
-								<p><strong>4. Select:</strong> Ideas were evaluated based on Feasibility, Desirability, and Viability. A modular shelving unit with token-operated locks ("The SecureShelf") was selected as the most balanced and promising concept.</p>
+									<figure>
+										<img src="images/brainstorming-ideas.jpg" alt="List of 10+ ideas for shoe storage solutions including 											lockers, QR codes, and conveyor belts" style="width: 100%;">
+										<figcaption>Figure 2: Brainstorming List of 10+ Ideas</figcaption>
+									</figure>
 
-								<p><strong>5. Prototype:</strong> The selected idea was translated into an annotated sketch, detailing the locking mechanism, token system, ventilation, and sloped shelves for easy retrieval. This sketch served as the final prototype for the sprint.</p>
+									<h4>Solution Selection Criteria</h4>
+									<p>Ideas were evaluated based on three key criteria:</p>
+									<div class="prototype-features">
+										<div class="feature-card">
+											<h4><i class="fas fa-check-circle"></i> Feasibility</h4>
+											<p>Can we technically build this with available resources?</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-heart"></i> Desirability</h4>
+											<p>Do users actually want and need this solution?</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-chart-line"></i> Viability</h4>
+											<p>Is this sustainable and cost-effective long-term?</p>
+										</div>
+									</div>
+									
+									<p>After evaluation, a modular shelving unit with <strong>lock and key compartments</strong> was selected as the most balanced and promising concept.</p>
+								</div>
 
-								<figure>
-									<img src="images/secure-shelf-sketch.jpg" alt="Annotated sketch of The SecureShelf showing locking compartments and token system" style="width: 100%;">
+								<div class="design-phase">
+									<h3>4. Prototype: Bringing the Solution to Life</h3>
+									<p>The selected idea was translated into an annotated sketch, detailing the locking mechanism, key system, ventilation, and sloped shelves for easy retrieval. The lock and key approach was chosen for its familiarity, reliability, and cost-effectiveness.</p>
+
+									<div class="prototype-features">
+										<div class="feature-card">
+											<h4><i class="fas fa-key"></i> Lock & Key System</h4>
+											<p>Individual keys for each compartment with master key for administration</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-layer-group"></i> Modular Design</h4>
+											<p>Stackable units that can expand as needed for different mosque sizes</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-wind"></i> Ventilation</h4>
+											<p>Proper airflow to prevent odor buildup in enclosed spaces</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-shoe-prints"></i> Sloped Shelves</h4>
+											<p>Angled design for easy shoe insertion and retrieval</p>
+										</div>
+									</div>
+
+									<figure>
+									<img src="images/secure-shelf-sketch.jpg" alt="Annotated sketch of The SecureShelf showing locking compartments 									and token system" style="width: 100%;">
 									<figcaption>Figure 3: Annotated Sketch of 'The SecureShelf' Prototype</figcaption>
-								</figure>
+									</figure>
+								</div>
 
 								<!-- Reflection -->
 								<header class="major">
 									<h2 id="reflection-section">Reflection</h2>
 								</header>
-								
-								<p>This sprint was a powerful demonstration of how a structured creative process can lead to innovative and practical solutions. The most significant takeaway was the importance of the Empathize and Define stages. By truly understanding the user's emotional state (anxiety, distraction) rather than just the surface-level problem (stolen shoes), the solution became about restoring "peace of mind," not just securing footwear. This human-centered focus ensured the final concept was meaningful.</p>
+								<h3>Learning Outcomes</h3>
+								<div class="design-phase">
+									<p>This sprint was a powerful demonstration of how a structured creative process can lead to innovative and practical solutions. The most significant takeaway was the importance of the Empathize and Define stages. By truly understanding the user's emotional state (anxiety, distraction) rather than just the surface-level problem (stolen shoes), the solution became about restoring "peace of mind," not just securing footwear. This human-centered focus ensured the final concept was meaningful.</p>
 
-								<p>The creation of the Empathy Map, in particular, was transformative. Filling in the "Think" and "Feel" quadrants moved the project beyond a simple design brief into the realm of genuine user experience. Furthermore, seeing the list of 10+ ideas visually demonstrated the power of deferred judgment, as wild ideas sparked more practical ones. Finally, the annotated sketch forced a consideration of practical details that would have been overlooked in a vague description, proving that a prototype's value lies in communication, not artistic skill.</p>
+									<p>The creation of the Empathy Map, in particular, was transformative. Filling in the "Think" and "Feel" quadrants moved the project beyond a simple design brief into the realm of genuine user experience. Furthermore, seeing the list of 12+ ideas visually demonstrated the power of deferred judgment, as wild ideas sparked more practical ones. Finally, the annotated sketch forced a consideration of practical details that would have been overlooked in a vague description, proving that a prototype's value lies in communication, not artistic skill.</p>
 
-								<p>If I were to iterate, the next step would be to Test the sketch prototype with actual worshippers and mosque administrators. Their feedback on our visual concept would likely reveal new insights—perhaps about the cost of tokens or the speed of the system during peak times—that would send us back to the Ideate or Define stage, perfectly illustrating the iterative, non-linear nature of Design Thinking. This process proves that great design is not about having a single brilliant idea, but about following a disciplined path to discover the best solution for the people you are designing for.</p>							
+									<div class="key-insight">
+										<strong>Iterative Mindset:</strong> Design Thinking is not a linear process but a cycle of learning and refinement. Each stage informs and improves the others.
+									</div>
+
+									<h3>Next Steps and Future Iterations</h3>
+									<p>If I were to iterate, the next step would be to Test the sketch prototype with actual worshippers and mosque administrators. Their feedback on our visual concept would likely reveal new insights—perhaps about the practicality of key management or the system's efficiency during peak prayer times—that would send us back to the Ideate or Define stage, perfectly illustrating the iterative, non-linear nature of Design Thinking.</p>
+
+									<p>This process proves that great design is not about having a single brilliant idea, but about following a disciplined path to discover the best solution for the people you are designing for. The lock and key system emerged as the optimal balance between security, usability, and practicality for the mosque environment.</p>
+									
+									<div class="prototype-features">
+										<div class="feature-card">
+											<h4><i class="fas fa-forward"></i> Next Phase: Testing</h4>
+											<p>Gather feedback from actual users to validate and improve the design</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-tools"></i> Implementation Planning</h4>
+											<p>Develop detailed specifications for manufacturing and installation</p>
+										</div>
+										<div class="feature-card">
+											<h4><i class="fas fa-expand-arrows-alt"></i> Scaling Considerations</h4>
+											<p>Plan for different mosque sizes and user capacity requirements</p>
+										</div>
+									</div>
+								</div>						
 							</div>
 						</div>
 					</section>
 				</div>
 			</div>
 
-			<!-- Sidebar -->
+			<!-- Sidebar (will be loaded automatically by sidebar-loader.js) -->
 			<div id="sidebar">
 				<!-- Sidebar content will be injected here -->
 			</div>
@@ -275,29 +446,36 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="assets/js/sidebar-loader.js"></script>
+		<script src="assets/js/sidebar-loader.js"></script> <!-- Universal sidebar loader -->
 		
 		<!-- Page-specific JavaScript -->
 		<script>
+			// Initialize page-specific functionality
 			document.addEventListener('DOMContentLoaded', function() {
-				// Force sidebar positioning on load
-				function initializeSidebar() {
-					const navBox = document.querySelector('.inpage-nav-box');
-					if (navBox) {
-						// Reset and reapply sticky positioning
-						navBox.style.position = 'sticky';
-						navBox.style.top = '20px';
-						navBox.style.zIndex = '1000';
-						console.log('Sidebar initialized with sticky positioning');
-					}
-				}
-
-				// Initialize sidebar
-				initializeSidebar();
-
-				// Re-initialize after a short delay to ensure all styles are loaded
-				setTimeout(initializeSidebar, 100);
-
+				// Tab functionality
+				const tabButtons = document.querySelectorAll('.tab-button');
+				tabButtons.forEach(button => {
+					button.addEventListener('click', function() {
+						const tabName = this.getAttribute('data-tab');
+						
+						// Update buttons
+						tabButtons.forEach(btn => btn.classList.remove('active'));
+						this.classList.add('active');
+						
+						// Update content
+						document.querySelectorAll('.tab-content').forEach(tab => {
+							tab.style.display = 'none';
+							tab.classList.remove('active');
+						});
+						
+						const activeTab = document.getElementById(tabName);
+						if (activeTab) {
+							activeTab.style.display = 'block';
+							activeTab.classList.add('active');
+						}
+					});
+				});
+				
 				// Navigation toggles
 				const navToggles = document.querySelectorAll('.nav-toggle-button');
 				navToggles.forEach(toggle => {
@@ -310,11 +488,12 @@
 						}
 					});
 				});
-
-				// Re-apply sticky positioning on window resize
-				window.addEventListener('resize', function() {
-					setTimeout(initializeSidebar, 50);
-				});
+				
+				// Set first tab as active by default
+				const firstTab = document.querySelector('.tab-content.active');
+				if (firstTab) {
+					firstTab.style.display = 'block';
+				}
 			});
 		</script>
 	</body>
