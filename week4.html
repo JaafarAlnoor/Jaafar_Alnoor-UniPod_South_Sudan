@@ -9,12 +9,10 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 		
 		<style>
-			/* Your existing week2 styles here */
 			.week-date { color: #666; font-style: italic; }
 			.less-bold { font-weight: 400; }
-			.image-caption { text-align: center; font-style: italic; color: #666; margin-top: -10px; }
+			.image-caption { text-align: center; font-style: italic; color: #666; margin-top: 8px; font-size: 0.9em; }
 			
-			/* In-Page Navigation Box CSS */
 			.inpage-nav-box {
 				float: right;
 				position: -webkit-sticky;
@@ -101,31 +99,156 @@
 				}
 			}
 			
-			/* Comparison table styling */
-			.comparison-table {
+			.process-steps-container {
+				display: block;
+				margin: 40px 0;
+			}
+			
+			.process-section {
+				background: #f8f9fa;
+				border-radius: 10px;
+				padding: 25px;
+				border: 2px solid #e9ecef;
+				margin-bottom: 30px;
+			}
+			
+			.process-section h3 {
+				color: #2980B9;
+				border-bottom: 2px solid #2980B9;
+				padding-bottom: 10px;
+				margin-top: 0;
+				font-size: 1.4em;
+			}
+			
+			.step-item {
+				background: white;
+				border-left: 4px solid #2980B9;
+				padding: 25px;
+				margin: 25px 0;
+				border-radius: 0 8px 8px 0;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+			}
+			
+			.step-number {
+				display: inline-block;
+				background: #2980B9;
+				color: white;
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 35px;
+				font-weight: bold;
+				margin-right: 15px;
+				font-size: 1.1em;
+			}
+			
+			.step-title {
+				font-weight: bold;
+				color: #2c3e50;
+				margin-bottom: 15px;
+				font-size: 1.2em;
+			}
+			
+			.step-description {
+				color: #666;
+				font-size: 1em;
+				line-height: 1.6;
+			}
+			
+			.tech-specs-box {
+				background: #e8f4fd;
+				border: 1px solid #b6d7e8;
+				border-radius: 8px;
+				padding: 25px;
+				margin: 25px 0;
+			}
+			
+			.tech-specs-box h4 {
+				color: #2980B9;
+				margin-top: 0;
+				font-size: 1.3em;
+			}
+			
+			.specs-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 15px;
+				margin-top: 15px;
+			}
+			
+			.spec-item {
+				padding: 12px 0;
+				border-bottom: 1px solid #d1ecf1;
+			}
+			
+			.spec-label {
+				font-weight: bold;
+				color: #2c3e50;
+				font-size: 1em;
+			}
+			
+			.spec-value {
+				color: #666;
+				font-size: 1em;
+			}
+			
+			.image-container {
+				text-align: center;
+				margin: 25px 0;
+			}
+			
+			.process-image {
 				width: 100%;
-				border-collapse: collapse;
+				height: auto;
+				border: 2px solid #e0e0e0;
+				border-radius: 8px;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+			}
+			
+			.step-image {
+				width: 100%;
+				height: auto;
+				border: 2px solid #e0e0e0;
+				border-radius: 8px;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 				margin: 20px 0;
 			}
 			
-			.comparison-table th, .comparison-table td {
-				border: 1px solid #ddd;
-				padding: 12px;
-				text-align: left;
+			.step-content {
+				margin-top: 20px;
 			}
 			
-			.comparison-table th {
-				background-color: #f2f2f2;
-				font-weight: bold;
+			.file-reference {
+				background: #f8f9fa;
+				padding: 10px 15px;
+				border-radius: 6px;
+				font-family: monospace;
+				font-size: 1em;
+				border-left: 4px solid #2980B9;
+				margin: 15px 0;
 			}
 			
-			.comparison-table tr:nth-child(even) {
-				background-color: #f9f9f9;
+			.step-divider {
+				height: 2px;
+				background: linear-gradient(90deg, transparent, #2980B9, transparent);
+				margin: 30px 0;
+				border: none;
 			}
 			
-			.software-highlight {
-				font-weight: bold;
+			.workspace-setup {
+				background: #f8f9fa;
+				border-radius: 10px;
+				padding: 25px;
+				margin: 30px 0;
+				border: 2px solid #e9ecef;
+			}
+			
+			.workspace-setup h3 {
 				color: #2980B9;
+				border-bottom: 2px solid #2980B9;
+				padding-bottom: 10px;
+				margin-top: 0;
 			}
 		</style>
 	</head>
@@ -154,8 +277,8 @@
 							</h4>
 							<ul id="nav-list-week4">
 								<li><a href="#intro-section">Introduction</a></li>
-								<li><a href="#process-docs-section">Process Documentation</a></li>
-								<li><a href="#software-comparison-section">Software Comparison</a></li>
+								<li><a href="#workspace-setup-section">Workspace Setup</a></li>
+								<li><a href="#process-documentation-section">Process Documentation</a></li>
 								<li><a href="#reflection-section">Reflection</a></li>
 							</ul>
 						</div>
@@ -171,17 +294,17 @@
 								<h3>Quick Summary</h3>
 							</header>
 							<ul class="alt">
-								<li><strong>Skills Learned:</strong> Vector drawing, precision dimensioning, layer management, technical documentation, file export formats, software comparison</li>
-								<li><strong>Digital Tools and Software Used:</strong> CorelDRAW Graphics Suite, Inkscape, PDF export tools, DXF conversion utilities</li>
-								<li><strong>Topics:</strong> Vector graphics for technical drawing, precision techniques, engineering standards, manufacturing documentation, software workflow comparison</li>
-								<li><strong>Key Concepts:</strong> Vector vs raster graphics, coordinate-based precision, technical drawing standards, scalable design, open-source vs proprietary software</li>
+								<li><strong>Skills Learned:</strong> Vector drawing, precision dimensioning, layer management, technical documentation, file export formats</li>
+								<li><strong>Digital Tools and Software Used:</strong> CorelDRAW Graphics Suite, PDF export tools, DXF conversion utilities</li>
+								<li><strong>Topics:</strong> Vector graphics for technical drawing, precision techniques, engineering standards, manufacturing documentation</li>
+								<li><strong>Key Concepts:</strong> Vector vs raster graphics, coordinate-based precision, technical drawing standards, scalable design</li>
 								<li><strong>Challenges Faced:</strong> Software learning curve, precision requirements, file compatibility, technical standard adherence, workflow optimization</li>
 							</ul>
 						</div>
-						<!-- ... all your existing week4 content bellow... -->
+
 						<div id="Notes" class="tab-content active">
 							<div>
-									<!-- Introduction -->
+								<!-- Introduction -->
 								<header class="major">
 									<h2 id="intro-section">Introduction</h2>
 								</header>
@@ -190,145 +313,277 @@
 									
 								<p>The objective was to translate the human-centered design concept into manufacturing-ready technical documentation that clearly communicates dimensions, assembly methods, and construction details for the lock-and-key shoe storage system.</p>
 
-								<strong>Design Translation:</strong> This phase bridged the gap between empathy-driven conceptual design and precise technical implementation, ensuring the final product maintains its user-centered focus while meeting manufacturing requirements.
-									
+								<!-- Workspace Setup -->
 								<header class="major">
-   								<h2 id="process-docs-section">Process Documentation</h2>
+									<h2 id="workspace-setup-section">Workspace Setup</h2>
 								</header>
 
-								<h3>Software Setup and Configuration</h3>
-								<p>The implementation process began with CorelDRAW installation and workspace optimization for technical drawing:</p>
-									<ul>
-										<li>Downloaded and installed CorelDRAW Graphics Suite trial version</li>
-										<li>Configured workspace with millimeter units for precision</li>
-										<li>Enabled grid systems and snap-to-grid features</li>
-										<li>Set up custom dimension styles and color palettes</li>
-										<li>Organized toolbars for technical drawing workflow</li>
-									</ul>									
-
-								<h3>Technical Drawing Creation</h3>
-   								<p>Created a comprehensive set of technical drawings including:</p>
-    
-    								
-								<h4>Front Elevation View</h4>
-								<div class="image-container">
-        							<img src="images/front-elevation.png" alt="Front Elevation" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
-        							<p class="image-caption">Overall dimensions: 900mm W × 600mm H × 300mm D</p>
+								<div class="workspace-setup">
+									<h3>CorelDRAW Configuration</h3>
+									<div class="image-container">
+										<img src="images/workspace-setup.png" alt="CorelDRAW Workspace Setup - Technical Drawing Configuration" class="process-image">
+										<p class="image-caption">Figure 1: CorelDRAW workspace configured for technical drawing with A3 document size and precision tools</p>
+									</div>
+									<div class="step-content">
+										<div class="file-reference">File: workspace-setup.png</div>
+										<div class="step-description">
+											<strong>Document Configuration:</strong><br>
+											• Document Size: A3 (297mm × 420mm)<br>
+											• Orientation: Landscape for optimal layout<br>
+											• Units: Millimeters for precision<br>
+											• Color Mode: CMYK for professional printing<br>
+											• Resolution: 300 dpi for high-quality output<br>
+											<br>
+											<strong>Workspace Settings:</strong><br>
+											• Grid: No grid used for freeform precision drawing<br>
+											• Snap to Objects: Enabled for accurate alignment<br>
+											• Rulers: Millimeters with proper origin point<br>
+											• Technical Workspace: Selected for CAD tools<br>
+											• Guides: Manual placement for critical measurements<br>
+											<br>
+											<strong>Tool Configuration:</strong><br>
+											• Dimension Tool: Added to main toolbar<br>
+											• Property Bar: Configured for technical drawing<br>
+											• Object Manager: Enabled for layer control<br>
+											• Color Palette: Technical colors (black, red, blue)<br>
+											• Zoom Tools: Configured for detailed work
+										</div>
+									</div>
 								</div>
-    						
-        							<h4>Isometric View</h4>
-								<div class="image-container">
-        							<img src="images/isometric-view.png" alt="Isometric View" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
-        							<p class="image-caption">3D projection showing spatial relationships</p>
-    								</div>
-        							        							
-    								
-    								<h4>Lock Mechanism Detail</h4>
-								<div class="image-container">
-        							<img src="images/lock-detail.png" alt="Lock Detail" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
-        							<p class="image-caption">Detailed view of security locking system</p>
-    								</div>
-    								
-    								<!-- Software Comparison Section -->
+
+								<!-- Process Documentation -->
 								<header class="major">
-									<h2 id="software-comparison-section">Software Comparison: CorelDRAW vs Inkscape</h2>
+									<h2 id="process-documentation-section">Process Documentation</h2>
 								</header>
-								
-								<p>During this project, I utilized both CorelDRAW and Inkscape to create technical drawings, which provided valuable insights into the strengths and limitations of each software for CAD implementation.</p>
-								
-								<h3>CorelDRAW Observations</h3>
-								<ul>
-									<li><span class="software-highlight">Professional Interface:</span> CorelDRAW offers a polished, industry-standard interface with extensive tool palettes</li>
-									<li><span class="software-highlight">Precision Tools:</span> Advanced dimensioning and measurement tools specifically designed for technical drawings</li>
-									<li><span class="software-highlight">Workflow Efficiency:</span> Streamlined workflow with comprehensive keyboard shortcuts and customizable workspaces</li>
-									<li><span class="software-highlight">File Compatibility:</span> Excellent support for industry-standard formats including DXF, DWG, and PDF</li>
-									<li><span class="software-highlight">Learning Curve:</span> Steeper initial learning curve but more powerful for complex technical documentation</li>
-								</ul>
-								
-								<h3>Inkscape Observations</h3>
-								<ul>
-									<li><span class="software-highlight">Accessibility:</span> Free and open-source, making it accessible to anyone without licensing costs</li>
-									<li><span class="software-highlight">Vector Capabilities:</span> Powerful vector editing tools with Bezier curves and path operations</li>
-									<li><span class="software-highlight">Community Support:</span> Extensive online community and documentation for troubleshooting</li>
-									<li><span class="software-highlight">Extension Ecosystem:</span> Wide range of available extensions for specialized tasks</li>
-									<li><span class="software-highlight">Performance:</span> Slightly slower with complex drawings compared to CorelDRAW</li>
-								</ul>
-								
-								<h3>Direct Comparison</h3>
-								<table class="comparison-table">
-									<thead>
-										<tr>
-											<th>Feature</th>
-											<th>CorelDRAW</th>
-											<th>Inkscape</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Cost</td>
-											<td>Proprietary (Subscription/One-time)</td>
-											<td>Free and Open Source</td>
-										</tr>
-										<tr>
-											<td>Technical Drawing Tools</td>
-											<td>Extensive and specialized</td>
-											<td>Basic but capable with extensions</td>
-										</tr>
-										<tr>
-											<td>Precision Dimensioning</td>
-											<td>Advanced and intuitive</td>
-											<td>Available but less streamlined</td>
-										</tr>
-										<tr>
-											<td>Learning Curve</td>
-											<td>Moderate to Steep</td>
-											<td>Gentle to Moderate</td>
-										</tr>
-										<tr>
-											<td>File Format Support</td>
-											<td>Extensive professional formats</td>
-											<td>Good standard format support</td>
-										</tr>
-										<tr>
-											<td>Performance with Complex Drawings</td>
-											<td>Excellent</td>
-											<td>Good (depends on system)</td>
-										</tr>
-									</tbody>
-								</table>
-								
-								<h3>Inkscape Isometric Design</h3>
-								<p>To further explore Inkscape's capabilities for technical drawing, I created an alternative isometric view of the Secure Shoe Rack System:</p>
-								
-								<div class="image-container">
-        							<img src="images/isometric-view-inkscape.png" alt="Inkscape Isometric View" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
-        							<p class="image-caption">Isometric view created using Inkscape, demonstrating its vector capabilities for technical illustration</p>
-    								</div>
-    								
-    								<h4>Inkscape Workflow Observations</h4>
-    								<ul>
-    									<li>Used the grid and snap-to-grid features extensively for precision</li>
-    									<li>Leveraged the Bezier pen tool for creating clean geometric shapes</li>
-    									<li>Utilized layers effectively to organize different components</li>
-    									<li>Exported to SVG format for web display and PDF for documentation</li>
-    									<li>Found the extension system useful for specialized tasks like isometric projection</li>
-    								</ul>
+
+								<p>The technical drawing process was divided into two main phases: Frame Construction and Door Unit Construction, each consisting of 4 detailed steps.</p>
+
+								<div class="process-steps-container">
+									<!-- Frame Construction Section -->
+									<div class="process-section">
+										<h3>Frame Construction (4 Steps)</h3>
+										
+										<!-- Step 1 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">1</span>Main Cabinet Frame</div>
+											<div class="image-container">
+												<img src="images/step1-main-frame.png" alt="Step 1: Main Cabinet Frame - 334mm × 211mm × 45mm" class="step-image">
+												<p class="image-caption">Figure 2: Main cabinet frame with 8×5 grid layout</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 01-main-frame.png</div>
+												<div class="step-description">
+													Created outer cabinet frame: 334mm × 211mm × 45mm<br>
+													Established 8×5 grid layout for shelves<br>
+													Configured material thickness: 6mm wood
+												</div>
+											</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 2 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">2</span>Shelf Grid System</div>
+											<div class="image-container">
+												<img src="images/step2-shelf-grid.png" alt="Step 2: Shelf Grid System - 8 columns × 5 rows" class="step-image">
+												<p class="image-caption">Figure 3: Detailed shelf grid with 40 compartments</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 02-shelf-grid.png</div>
+												<div class="step-description">
+													Divided into 8 columns × 5 rows = 40 compartments<br>
+													Column width: 36.5mm per column<br>
+													Row height: 37.4mm per row<br>
+													Added internal 6mm wood dividers
+												</div>
+											</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 3 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">3</span>Structural Supports</div>
+											<div class="image-container">
+												<img src="images/step3-structural-supports.png" alt="Step 3: Structural Supports - 6mm wood reinforcements" class="step-image">
+												<p class="image-caption">Figure 4: Structural supports and reinforcement</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 03-structural-supports.png</div>
+												<div class="step-description">
+													Added 6mm vertical supports between 8 columns<br>
+													Installed 6mm horizontal shelf rails for 5 rows<br>
+													Reinforcement for door mounting<br>
+													Weight distribution calculations
+												</div>
+											</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 4 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">4</span>Frame Dimensioning</div>
+											<div class="image-container">
+												<img src="images/step4-frame-dimensioning.png" alt="Step 4: Frame Dimensioning - Complete measurements" class="step-image">
+												<p class="image-caption">Figure 5: Complete frame dimensioning</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 04-frame-dimensioning.png</div>
+												<div class="step-description">
+													Overall dimensions: 334mm × 211mm × 45mm<br>
+													Individual compartment internal sizes: ~30.5mm × 31.4mm<br>
+													Material thickness callouts: 6mm wood<br>
+													Tolerance: ±0.3mm
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Door Unit Construction Section -->
+									<div class="process-section">
+										<h3>Door Unit Construction (4 Steps)</h3>
+										
+										<!-- Step 5 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">5</span>Door Outline & Panel</div>
+											<div class="image-container">
+												<img src="images/step5-door-outline.png" alt="Step 5: Door Outline & Panel - 38mm × 38mm" class="step-image">
+												<p class="image-caption">Figure 6: Door outline and panel design</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 05-door-outline.png</div>
+												<div class="step-description">
+													Single door unit: 38mm × 38mm<br>
+													Inner panel: 35mm × 35mm<br>
+													Frame thickness: 6mm wood<br>
+													Material: 6mm wood with clear finish
+												</div>
+											</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 6 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">6</span>Lock Mechanism</div>
+											<div class="image-container">
+												<img src="images/step6-lock-mechanism.png" alt="Step 6: Lock Mechanism - Cabin lock installation" class="step-image">
+												<p class="image-caption">Figure 7: Cabin lock mechanism details</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 06-lock-mechanism.png</div>
+												<div class="step-description">
+													Cabin lock position: centered, 8mm from top<br>
+													Cylinder hole: Ø15mm (reinforced for 6mm wood)<br>
+													Faceplate: 20mm × 10mm<br>
+													Strike plate location on 6mm frame
+												</div>
+											</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 7 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">7</span>Hinge Joint System</div>
+											<div class="image-container">
+												<img src="images/step7-hinge-joints.png" alt="Step 7: Hinge Joint System - 8mm × 4mm hinges" class="step-image">
+												<p class="image-caption">Figure 8: Hinge joint system and mounting</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 07-hinge-joints.png</div>
+												<div class="step-description">
+													Hinge locations: 6mm from top and bottom<br>
+													Hinge size: 8mm × 4mm (suitable for 6mm wood)<br>
+													Pivot points and rotation clearance<br>
+													Mounting specifications for thinner material
+												</div>
+											</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 8 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">8</span>Door Dimensioning & Assembly</div>
+											<div class="image-container">
+												<img src="images/step8-door-assembly.png" alt="Step 8: Door Dimensioning & Assembly - Complete specifications" class="step-image">
+												<p class="image-caption">Figure 9: Complete door assembly with dimensions</p>
+											</div>
+											<div class="step-content">
+												<div class="file-reference">File: 08-door-dimensioning.png</div>
+												<div class="step-description">
+													Complete door dimensions: 38mm × 38mm<br>
+													Hardware positioning for 6mm wood<br>
+													Clearance requirements: 0.5mm<br>
+													Assembly sequence notes
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Technical Specifications under Process Documentation -->
+								<header class="major">
+									<h3>Technical Specifications</h3>
+								</header>
+
+								<div class="tech-specs-box">
+									<h4>Complete System Integration</h4>
+									<div class="specs-grid">
+										<div class="spec-item">
+											<div class="spec-label">Frame Dimensions</div>
+											<div class="spec-value">334mm × 211mm × 45mm</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Grid Configuration</div>
+											<div class="spec-value">8 columns × 5 rows</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Total Compartments</div>
+											<div class="spec-value">40 individual units</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Door Size</div>
+											<div class="spec-value">38mm × 38mm each</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Material</div>
+											<div class="spec-value">6mm wood throughout</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Internal Compartment</div>
+											<div class="spec-value">~30.5mm × 31.4mm × 39mm</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Tolerance</div>
+											<div class="spec-value">±0.3mm</div>
+										</div>
+										<div class="spec-item">
+											<div class="spec-label">Weight Class</div>
+											<div class="spec-value">Lightweight construction</div>
+										</div>
+									</div>
+								</div>
+
+								<p><strong>Key Features with 6mm Wood:</strong> Lighter weight overall construction, smaller internal compartments due to material thickness, tighter tolerances required (±0.3mm), reinforced joints needed for structural integrity, suitable for smaller items due to reduced compartment size.</p>
    
 								<!-- Reflection -->
 								<header class="major">
-								<h2 id="reflection-section">Reflection</h2>
+									<h2 id="reflection-section">Reflection</h2>
 								</header>
 
 								<h3>Learning Outcomes</h3>
 								This week provided significant growth in technical design capabilities and software proficiency:	
-								<li><strong>Software Mastery:</strong> Developed comprehensive skills in CorelDRAW for technical applications, moving beyond basic graphic design uses. Gained practical experience with Inkscape as a viable alternative for vector-based technical drawings.</li>
+								<li><strong>Software Mastery:</strong> Developed comprehensive skills in CorelDRAW for technical applications, moving beyond basic graphic design uses.</li>
 										
-								<li><strong>Technical Precision:</strong> Gained understanding of precision drawing techniques and engineering documentation standards across multiple software platforms.</li>
+								<li><strong>Technical Precision:</strong> Gained understanding of precision drawing techniques and engineering documentation standards.</li>
 										
-								<li><strong>Design Translation:</strong> Successfully bridged conceptual design and technical implementation while maintaining design intent across different software environments.</li>
-																															<li><strong>Manufacturing Awareness:</strong> Developed understanding of how technical drawings inform and guide manufacturing processes, regardless of the software used to create them.</li>
+								<li><strong>Design Translation:</strong> Successfully bridged conceptual design and technical implementation while maintaining design intent.</li>
 								
-								<li><strong>Software Evaluation Skills:</strong> Learned to critically evaluate different software tools based on project requirements, budget constraints, and technical capabilities.</li>
+								<li><strong>Manufacturing Awareness:</strong> Developed understanding of how technical drawings inform and guide manufacturing processes.</li>
 		
 							</div>
 						</div>
