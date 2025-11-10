@@ -9,9 +9,8 @@
 		
 		<style>
 			.week-date { color: #666; font-style: italic; }
-			.image-caption { text-align: center; font-style: italic; color: #666; margin-top: -10px; }
+			.image-caption { text-align: center; font-style: italic; color: #666; margin-top: 8px; font-size: 0.9em; }
 			
-			/* In-Page Navigation Box CSS */
 			.inpage-nav-box {
 				float: right;
 				position: -webkit-sticky;
@@ -97,6 +96,167 @@
 					margin-bottom: 20px;
 				}
 			}
+			
+			.process-steps-container {
+				display: block;
+				margin: 40px 0;
+			}
+			
+			.process-section {
+				background: #f8f9fa;
+				border-radius: 10px;
+				padding: 25px;
+				border: 2px solid #e9ecef;
+				margin-bottom: 30px;
+			}
+			
+			.process-section h3 {
+				color: #2980B9;
+				border-bottom: 2px solid #2980B9;
+				padding-bottom: 10px;
+				margin-top: 0;
+				font-size: 1.4em;
+			}
+			
+			.step-item {
+				background: white;
+				border-left: 4px solid #2980B9;
+				padding: 25px;
+				margin: 25px 0;
+				border-radius: 0 8px 8px 0;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+			}
+			
+			.step-number {
+				display: inline-block;
+				background: #2980B9;
+				color: white;
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 35px;
+				font-weight: bold;
+				margin-right: 15px;
+				font-size: 1.1em;
+			}
+			
+			.step-title {
+				font-weight: bold;
+				color: #2c3e50;
+				margin-bottom: 15px;
+				font-size: 1.2em;
+			}
+			
+			.step-description {
+				color: #666;
+				font-size: 1em;
+				line-height: 1.6;
+			}
+			
+			.image-container {
+				text-align: center;
+				margin: 25px 0;
+			}
+			
+			.process-image {
+				width: 100%;
+				height: auto;
+				border: 2px solid #e0e0e0;
+				border-radius: 8px;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+			}
+			
+			.step-image {
+				width: 100%;
+				height: auto;
+				border: 2px solid #e0e0e0;
+				border-radius: 8px;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+				margin: 20px 0;
+			}
+			
+			.step-content {
+				margin-top: 20px;
+			}
+			
+			.file-reference {
+				background: #f8f9fa;
+				padding: 10px 15px;
+				border-radius: 6px;
+				font-family: monospace;
+				font-size: 1em;
+				border-left: 4px solid #2980B9;
+				margin: 15px 0;
+			}
+			
+			.step-divider {
+				height: 2px;
+				background: linear-gradient(90deg, transparent, #2980B9, transparent);
+				margin: 30px 0;
+				border: none;
+			}
+			
+			.feature-tree {
+				background: #2c3e50;
+				color: white;
+				padding: 15px;
+				border-radius: 6px;
+				font-family: monospace;
+				font-size: 0.9em;
+				margin: 15px 0;
+			}
+			
+			.material-properties {
+				background: #e8f6f3;
+				border: 1px solid #a3e4d7;
+				border-radius: 8px;
+				padding: 20px;
+				margin: 20px 0;
+			}
+			
+			.material-properties h4 {
+				color: #1a5276;
+				margin-top: 0;
+			}
+			
+			.notes-box {
+				background: #fff3cd;
+				border: 1px solid #ffeaa7;
+				border-radius: 8px;
+				padding: 20px;
+				margin: 20px 0;
+			}
+			
+			.notes-box h4 {
+				color: #856404;
+				margin-top: 0;
+				border-bottom: 1px solid #ffeaa7;
+				padding-bottom: 10px;
+			}
+			
+			.extrusion-params {
+				background: #e8f5e8;
+				border: 1px solid #c8e6c9;
+				border-radius: 8px;
+				padding: 20px;
+				margin: 20px 0;
+			}
+			
+			.extrusion-params h4 {
+				color: #2e7d32;
+				margin-top: 0;
+				border-bottom: 1px solid #c8e6c9;
+				padding-bottom: 10px;
+			}
+			
+			.param-group {
+				margin: 15px 0;
+				padding: 10px;
+				background: white;
+				border-radius: 6px;
+				border-left: 4px solid #4caf50;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -124,7 +284,7 @@
 							</h4>
 							<ul id="nav-list-week5">
 								<li><a href="#intro-section">Introduction</a></li>
-								<li><a href="#process-docs-section">Process Documentation</a></li>
+								<li><a href="#process-documentation-section">Process Documentation</a></li>
 								<li><a href="#reflection-section">Reflection</a></li>
 							</ul>
 						</div>
@@ -161,31 +321,156 @@
 
 								<!-- Process Documentation -->
 								<header class="major">
-									<h2 id="process-docs-section">Process Documentation</h2>
+									<h2 id="process-documentation-section">Process Documentation</h2>
 								</header>
 
-								<p>The 3D part design process involved creating individual components for the Secure Shoe Rack System using SolidWorks parametric modeling techniques.</p>
+								<p>The 3D part design process involved creating individual components for the Secure Shoe Rack System using SolidWorks parametric modeling techniques, translating the 2D technical drawings from Week 4 into manufacturable 3D parts.</p>
 
-								<h3>Main Frame with Integrated Door and Lock</h3>
-								<div class="image-container">
-									<img src="images/main-frame.png" alt="Main Frame with Door and Lock" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
-									<p class="image-caption">Main structural frame</p>
+								<div class="process-steps-container">
+									<!-- Main Frame Section -->
+									<div class="process-section">
+										<h3>Main Cabinet Frame (4 Steps)</h3>
+										
+										<!-- Step 1 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">1</span>Base Sketch & Grid Division Creation</div>
+											<div class="image-container">
+												<img src="images/5-1.png" alt="Front Plane Selection and Base Sketch" class="step-image">
+												<p class="image-caption">Figure 1: Front Plane selection and base sketch creation</p>
+											</div>
+											<div class="step-content">
+												<div class="step-description">
+													<strong>Sketch Creation Process:</strong><br>
+													• Selected Front Plane as sketch plane for base geometry<br>
+													• Created 334mm × 211mm rectangle using Center Rectangle tool<br>
+													• Applied geometric relations: Horizontal, Vertical, Equal<br>
+													• Fully defined sketch with all dimensions (black lines)<br>
+													• Added construction lines for reference geometry<br>
+													• Established origin at center for symmetric modeling
+												</div>
+																																			</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 2 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">2</span>Frame Extrusion</div>
+											<div class="image-container">
+												<img src="images/5-2.png" alt="Extrusion Parameters and Feature Configuration" class="step-image">
+											</div>
+
+<div class="image-container">
+												<img src="images/5-3.png" alt="Extrusion Parameters and Feature Configuration" class="step-image">
+												<p class="image-caption">Figure 2 & 3: Extrusion parameters and feature configuration</p>
+											</div>
+
+
+											<div class="step-content">
+												<div class="step-description">
+													<strong>Extrusion Process:</strong><br>
+													• Applied Extruded Boss/Base feature to create 3D geometry<br>
+													• Configured extrusion parameters for precise depth control<br>
+													• Used equation-driven dimensions for parametric design<br>
+													• Verified feature creation with error checking enabled
+												</div>
+											</div>
+												
+																																		
+										<hr class="step-divider">
+										
+										<!-- Step 3 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">3</span>Back Cover Creation</div>
+											<div class="image-container">
+												<img src="images/5-4.png" alt="Step 3: Grid Division - 8×5 compartment layout" class="step-image">
+											</div>
+<div class="image-container">
+												<img src="images/5-5.png" alt="Step 3: Grid Division - 8×5 compartment layout" class="step-image">
+												<p class="image-caption">Figure 4 & 5: Back Cover</p>
+											</div>
+
+											<div class="step-content">
+												<div class="step-description">
+													<strong>Grid Creation Process:</strong><br>
+													• Created new sketch on the extruded front face<br>
+													• Used Linear Sketch Pattern for 8 vertical dividers<br>
+													• Used Linear Sketch Pattern for 5 horizontal shelves<br>
+													• Divider thickness: 6mm (material specification)<br>
+													• Compartment internal size: ~30.5mm × 31.4mm<br>
+													• Applied Extruded Cut feature through all (45mm)<br>
+													• Used the existing solid frame as reference geometry
+												</div>
+																							</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										
+									<!-- Door Unit Section -->
+									<div class="process-section">
+										<h3>Door Unit Construction (2 Steps)</h3>
+										
+										<!-- Step 4 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">4</span>Door Panel Creation</div>
+											<div class="image-container">
+												<img src="images/5-6.png" alt="Step 5: Door Panel - 38mm × 38mm with 6mm frame" class="step-image">
+												<p class="image-caption">Figure 5: Door panel sketch and extrusion</p>
+											</div>
+											<div class="step-content">
+												
+												<div class="step-description">
+													<strong>Door Panel Design:</strong><br>
+													• New part file created for door component<br>
+													• Outer dimensions: 38mm × 38mm square<br>
+													• Frame thickness: 6mm (matches main frame material)<br>
+													• Inner panel: 35mm × 35mm clear area<br>
+													• Extrusion depth: 6mm (single material thickness)<br>
+													• Clearance: 0.5mm allowance for smooth operation
+												</div>
+																							</div>
+										</div>
+										
+										<hr class="step-divider">
+										
+										<!-- Step 5 -->
+										<div class="step-item">
+											<div class="step-title"><span class="step-number">5</span>Final Door Assembly</div>
+											<div class="image-container">
+												<img src="images/5-9.png" alt="Step 5: Final Door Assembly - Complete specifications" class="step-image">
+												
+											</div>
+<div class="image-container">
+												<img src="images/5-7.png" alt="Step 5: Final Door Assembly - Complete specifications" class="step-image">
+												<p class="image-caption">Figure 5 & 6: Completed door with all manufacturing features</p>
+											</div>
+											<div class="step-content">
+												
+												<div class="step-description">
+													<strong>Final Features and Verification:</strong><br>
+													• Applied 0.5mm fillets to all sharp edges<br>
+													• Added 1mm chamfers to external corners<br>
+													• Verified mass properties: ~25g per door<br>
+													• Checked center of mass for balance<br>
+													• Performed interference detection with frame<br>
+													• Added custom properties for manufacturing
+												</div>
+																																																	
+											</div>
+										</div>
+									</div>
 								</div>
 
-								<h3>Shelf Unit with Individual Door and Lock</h3>
-								<div class="image-container">
-									<img src="images/door.png" alt="Shelf with Door and Lock" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
-									<p class="image-caption">Individual door</p>
-								</div>
-
+								<p><strong>Design Intent Preservation:</strong> All components maintain parametric relationships with the original 2D technical drawings. Dimensions are driven by equations and global variables to ensure consistency across all parts. Manufacturing considerations include proper fillets, chamfers, and clearance allowances for assembly.</p>
+   
 								<!-- Reflection -->
 								<header class="major">
 									<h2 id="reflection-section">Reflection</h2>
 								</header>
 
 								<h3>Learning Outcomes</h3>
-								<p>This week provided deep immersion in 3D part design and parametric modeling principles:</p>
-								
+								This week provided deep immersion in 3D part design and parametric modeling principles:
 								<ul>
 									<li><strong>Parametric Modeling Expertise:</strong> Mastered feature-based modeling techniques, understanding how to create intelligent, easily modifiable parts that maintain design intent through changes.</li>
 									
@@ -204,6 +489,9 @@
 									
 									<li><strong>File Organization:</strong> Implemented systematic naming conventions and folder structures for multiple part files.</li>
 								</ul>
+
+								<h3>Future Applications</h3>
+								<p>The skills developed this week in parametric 3D modeling will be directly applicable to future projects requiring precise component design and manufacturing documentation. The understanding of design intent and feature-based modeling provides a solid foundation for more complex assemblies and advanced CAD workflows.</p>
 							</div>
 						</div>
 					</section>
