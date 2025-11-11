@@ -159,14 +159,6 @@
 				margin: 25px 0;
 			}
 			
-			.process-image {
-				width: 100%;
-				height: auto;
-				border: 2px solid #e0e0e0;
-				border-radius: 8px;
-				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-			}
-			
 			.step-image {
 				width: 100%;
 				height: auto;
@@ -180,82 +172,67 @@
 				margin-top: 20px;
 			}
 			
-			.file-reference {
-				background: #f8f9fa;
-				padding: 10px 15px;
-				border-radius: 6px;
-				font-family: monospace;
-				font-size: 1em;
-				border-left: 4px solid #2980B9;
-				margin: 15px 0;
-			}
-			
 			.step-divider {
 				height: 2px;
 				background: linear-gradient(90deg, transparent, #2980B9, transparent);
 				margin: 30px 0;
 				border: none;
 			}
-			
-			.feature-tree {
-				background: #2c3e50;
-				color: white;
-				padding: 15px;
-				border-radius: 6px;
-				font-family: monospace;
-				font-size: 0.9em;
-				margin: 15px 0;
+
+			/* CAD Files Download Styles */
+			.download-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 20px;
+				margin: 25px 0;
 			}
-			
-			.material-properties {
-				background: #e8f6f3;
-				border: 1px solid #a3e4d7;
-				border-radius: 8px;
-				padding: 20px;
-				margin: 20px 0;
-			}
-			
-			.material-properties h4 {
-				color: #1a5276;
-				margin-top: 0;
-			}
-			
-			.notes-box {
-				background: #fff3cd;
-				border: 1px solid #ffeaa7;
-				border-radius: 8px;
-				padding: 20px;
-				margin: 20px 0;
-			}
-			
-			.notes-box h4 {
-				color: #856404;
-				margin-top: 0;
-				border-bottom: 1px solid #ffeaa7;
-				padding-bottom: 10px;
-			}
-			
-			.extrusion-params {
-				background: #e8f5e8;
-				border: 1px solid #c8e6c9;
-				border-radius: 8px;
-				padding: 20px;
-				margin: 20px 0;
-			}
-			
-			.extrusion-params h4 {
-				color: #2e7d32;
-				margin-top: 0;
-				border-bottom: 1px solid #c8e6c9;
-				padding-bottom: 10px;
-			}
-			
-			.param-group {
-				margin: 15px 0;
-				padding: 10px;
+
+			.download-card {
 				background: white;
-				border-radius: 6px;
-				border-left: 4px solid #4caf50;
+				border: 2px solid #e0e0e0;
+				border-radius: 10px;
+				padding: 25px;
+				text-align: center;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			}
+
+			.download-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border-color: #2980B9;
+			}
+
+			.file-name {
+				font-weight: bold;
+				color: #2c3e50;
+				margin-bottom: 10px;
+				font-size: 1.1em;
+			}
+
+			.file-description {
+				color: #666;
+				font-size: 0.9em;
+				margin-bottom: 20px;
+				line-height: 1.4;
+			}
+
+			.download-btn {
+				background: #2980B9;
+				color: white;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				text-decoration: none;
+				font-weight: bold;
+				display: inline-block;
+				transition: background 0.3s ease;
+			}
+
+			.download-btn:hover {
+				background: #1c6691;
+				color: white;
+				text-decoration: none;
 			}
 		</style>
 	</head>
@@ -285,6 +262,7 @@
 							<ul id="nav-list-week5">
 								<li><a href="#intro-section">Introduction</a></li>
 								<li><a href="#process-documentation-section">Process Documentation</a></li>
+								<li><a href="#cad-files-section">CAD Files Download</a></li>
 								<li><a href="#reflection-section">Reflection</a></li>
 							</ul>
 						</div>
@@ -348,7 +326,7 @@
 													• Added construction lines for reference geometry<br>
 													• Established origin at center for symmetric modeling
 												</div>
-																																			</div>
+											</div>
 										</div>
 										
 										<hr class="step-divider">
@@ -358,14 +336,9 @@
 											<div class="step-title"><span class="step-number">2</span>Frame Extrusion</div>
 											<div class="image-container">
 												<img src="images/5-2.png" alt="Extrusion Parameters and Feature Configuration" class="step-image">
-											</div>
-
-<div class="image-container">
 												<img src="images/5-3.png" alt="Extrusion Parameters and Feature Configuration" class="step-image">
 												<p class="image-caption">Figure 2 & 3: Extrusion parameters and feature configuration</p>
 											</div>
-
-
 											<div class="step-content">
 												<div class="step-description">
 													<strong>Extrusion Process:</strong><br>
@@ -375,8 +348,8 @@
 													• Verified feature creation with error checking enabled
 												</div>
 											</div>
-												
-																																		
+										</div>
+										
 										<hr class="step-divider">
 										
 										<!-- Step 3 -->
@@ -384,12 +357,9 @@
 											<div class="step-title"><span class="step-number">3</span>Back Cover Creation</div>
 											<div class="image-container">
 												<img src="images/5-4.png" alt="Step 3: Grid Division - 8×5 compartment layout" class="step-image">
-											</div>
-<div class="image-container">
 												<img src="images/5-5.png" alt="Step 3: Grid Division - 8×5 compartment layout" class="step-image">
 												<p class="image-caption">Figure 4 & 5: Back Cover</p>
 											</div>
-
 											<div class="step-content">
 												<div class="step-description">
 													<strong>Grid Creation Process:</strong><br>
@@ -401,54 +371,31 @@
 													• Applied Extruded Cut feature through all (45mm)<br>
 													• Used the existing solid frame as reference geometry
 												</div>
-																							</div>
+											</div>
 										</div>
-										
-										<hr class="step-divider">
-										
+									</div>
 										
 									<!-- Door Unit Section -->
 									<div class="process-section">
-										<h3>Door Unit Construction (2 Steps)</h3>
+										<h3>Door Unit Construction (1 Step)</h3>
 										
-										<!-- Step 4 -->
+										<!-- Single Door Step -->
 										<div class="step-item">
-											<div class="step-title"><span class="step-number">4</span>Door Panel Creation</div>
+											<div class="step-title"><span class="step-number">4</span>Door Panel Design</div>
 											<div class="image-container">
-												<img src="images/5-6.png" alt="Step 5: Door Panel - 38mm × 38mm with 6mm frame" class="step-image">
-												<p class="image-caption">Figure 5: Door panel sketch and extrusion</p>
+												<img src="images/5-6.png" alt="Door Panel Sketch and Design" class="step-image">
+												<img src="images/5-7.png" alt="Completed Door Panel" class="step-image">
+												<p class="image-caption">Figure 6 & 7: Door panel design process and completed component</p>
 											</div>
 											<div class="step-content">
-												
 												<div class="step-description">
-													<strong>Door Panel Design:</strong><br>
+													<strong>Door Panel Design Process:</strong><br>
 													• New part file created for door component<br>
 													• Outer dimensions: 38mm × 38mm square<br>
 													• Frame thickness: 6mm (matches main frame material)<br>
 													• Inner panel: 35mm × 35mm clear area<br>
 													• Extrusion depth: 6mm (single material thickness)<br>
-													• Clearance: 0.5mm allowance for smooth operation
-												</div>
-																							</div>
-										</div>
-										
-										<hr class="step-divider">
-										
-										<!-- Step 5 -->
-										<div class="step-item">
-											<div class="step-title"><span class="step-number">5</span>Final Door Assembly</div>
-											<div class="image-container">
-												<img src="images/5-9.png" alt="Step 5: Final Door Assembly - Complete specifications" class="step-image">
-												
-											</div>
-<div class="image-container">
-												<img src="images/5-7.png" alt="Step 5: Final Door Assembly - Complete specifications" class="step-image">
-												<p class="image-caption">Figure 5 & 6: Completed door with all manufacturing features</p>
-											</div>
-											<div class="step-content">
-												
-												<div class="step-description">
-													<strong>Final Features and Verification:</strong><br>
+													• Clearance: 0.5mm allowance for smooth operation<br>
 													• Applied 0.5mm fillets to all sharp edges<br>
 													• Added 1mm chamfers to external corners<br>
 													• Verified mass properties: ~25g per door<br>
@@ -456,13 +403,36 @@
 													• Performed interference detection with frame<br>
 													• Added custom properties for manufacturing
 												</div>
-																																																	
 											</div>
 										</div>
 									</div>
 								</div>
 
 								<p><strong>Design Intent Preservation:</strong> All components maintain parametric relationships with the original 2D technical drawings. Dimensions are driven by equations and global variables to ensure consistency across all parts. Manufacturing considerations include proper fillets, chamfers, and clearance allowances for assembly.</p>
+
+								<!-- CAD Files Download Section -->
+								<header class="major">
+									<h2 id="cad-files-section">CAD Files Download</h2>
+								</header>
+
+								<div class="box">
+									<h3>SolidWorks Part Files</h3>
+									<p>Download the complete set of SolidWorks part files created during this week's 3D modeling process. These files represent the individual components designed for the Secure Shoe Rack System.</p>
+									
+									<div class="download-grid">
+										<div class="download-card">
+											<div class="file-name">Main Cabinet Frame with Back Cover</div>
+											<div class="file-description">Complete main frame with integrated back cover and grid compartments</div>
+											<a href="files/Main_Cabinet_Frame_With_Back_Cover.SLDPRT" class="download-btn" download>Download SLDPRT</a>
+										</div>
+										
+										<div class="download-card">
+											<div class="file-name">Door Panel</div>
+											<div class="file-description">Individual door component with frame and manufacturing features</div>
+											<a href="files/Door_Panel.SLDPRT" class="download-btn" download>Download SLDPRT</a>
+										</div>
+									</div>
+								</div>
    
 								<!-- Reflection -->
 								<header class="major">
