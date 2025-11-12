@@ -250,6 +250,77 @@
 				padding-bottom: 10px;
 				margin-top: 0;
 			}
+
+			/* CAD Files Download Styles */
+			.download-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 20px;
+				margin: 25px 0;
+			}
+
+			.download-card {
+				background: white;
+				border: 2px solid #e0e0e0;
+				border-radius: 10px;
+				padding: 25px;
+				text-align: center;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			}
+
+			.download-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border-color: #2980B9;
+			}
+
+			.file-name {
+				font-weight: bold;
+				color: #2c3e50;
+				margin-bottom: 10px;
+				font-size: 1.1em;
+			}
+
+			.file-description {
+				color: #666;
+				font-size: 0.9em;
+				margin-bottom: 20px;
+				line-height: 1.4;
+			}
+
+			.download-btn {
+				background: #2980B9;
+				color: white;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				text-decoration: none;
+				font-weight: bold;
+				display: inline-block;
+				transition: background 0.3s ease;
+			}
+
+			.download-btn:hover {
+				background: #1c6691;
+				color: white;
+				text-decoration: none;
+			}
+
+			.notes-box {
+				background: #fff3cd;
+				border: 1px solid #ffeaa7;
+				border-radius: 8px;
+				padding: 20px;
+				margin: 20px 0;
+			}
+
+			.notes-box h4 {
+				color: #856404;
+				margin-top: 0;
+				border-bottom: 1px solid #ffeaa7;
+				padding-bottom: 10px;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -273,11 +344,10 @@
 						<div class="inpage-nav-box">
 							<h4>
 								On This Page
-								<button class="nav-toggle-button" aria-expanded="true" aria-controls="nav-list-week2" title="Toggle navigation list">-</button>
+								<button class="nav-toggle-button" aria-expanded="true" aria-controls="nav-list-week4" title="Toggle navigation list">-</button>
 							</h4>
 							<ul id="nav-list-week4">
 								<li><a href="#intro-section">Introduction</a></li>
-								<li><a href="#workspace-setup-section">Workspace Setup</a></li>
 								<li><a href="#process-documentation-section">Process Documentation</a></li>
 								<li><a href="#reflection-section">Reflection</a></li>
 							</ul>
@@ -313,19 +383,19 @@
 									
 								<p>The objective was to translate the human-centered design concept into manufacturing-ready technical documentation that clearly communicates dimensions, assembly methods, and construction details for the lock-and-key shoe storage system.</p>
 
-								<!-- Workspace Setup -->
+								<!-- Process Documentation -->
 								<header class="major">
-									<h2 id="workspace-setup-section">Workspace Setup</h2>
+									<h2 id="process-documentation-section">Process Documentation</h2>
 								</header>
 
+								<!-- Workspace Setup at the beginning of Process Documentation -->
 								<div class="workspace-setup">
-									<h3>CorelDRAW Configuration</h3>
+									<h3>CorelDRAW Workspace Configuration</h3>
 									<div class="image-container">
 										<img src="images/workspace-setup.png" alt="CorelDRAW Workspace Setup - Technical Drawing Configuration" class="process-image">
 										<p class="image-caption">Figure 1: CorelDRAW workspace configured for technical drawing with A3 document size and precision tools</p>
 									</div>
 									<div class="step-content">
-										<div class="file-reference">File: workspace-setup.png</div>
 										<div class="step-description">
 											<strong>Document Configuration:</strong><br>
 											• Document Size: A3 (297mm × 420mm)<br>
@@ -351,11 +421,6 @@
 									</div>
 								</div>
 
-								<!-- Process Documentation -->
-								<header class="major">
-									<h2 id="process-documentation-section">Process Documentation</h2>
-								</header>
-
 								<p>The technical drawing process was divided into two main phases: Frame Construction and Door Unit Construction, each consisting of 4 detailed steps.</p>
 
 								<div class="process-steps-container">
@@ -371,7 +436,6 @@
 												<p class="image-caption">Figure 2: Main cabinet frame with 8×5 grid layout</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 01-main-frame.png</div>
 												<div class="step-description">
 													Created outer cabinet frame: 334mm × 211mm × 45mm<br>
 													Established 8×5 grid layout for shelves<br>
@@ -390,7 +454,6 @@
 												<p class="image-caption">Figure 3: Detailed shelf grid with 40 compartments</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 02-shelf-grid.png</div>
 												<div class="step-description">
 													Divided into 8 columns × 5 rows = 40 compartments<br>
 													Column width: 36.5mm per column<br>
@@ -410,7 +473,6 @@
 												<p class="image-caption">Figure 4: Structural supports and reinforcement</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 03-structural-supports.png</div>
 												<div class="step-description">
 													Added 6mm vertical supports between 8 columns<br>
 													Installed 6mm horizontal shelf rails for 5 rows<br>
@@ -430,7 +492,6 @@
 												<p class="image-caption">Figure 5: Complete frame dimensioning</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 04-frame-dimensioning.png</div>
 												<div class="step-description">
 													Overall dimensions: 334mm × 211mm × 45mm<br>
 													Individual compartment internal sizes: ~30.5mm × 31.4mm<br>
@@ -453,7 +514,6 @@
 												<p class="image-caption">Figure 6: Door outline and panel design</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 05-door-outline.png</div>
 												<div class="step-description">
 													Single door unit: 38mm × 38mm<br>
 													Inner panel: 35mm × 35mm<br>
@@ -473,7 +533,6 @@
 												<p class="image-caption">Figure 7: Cabin lock mechanism details</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 06-lock-mechanism.png</div>
 												<div class="step-description">
 													Cabin lock position: centered, 8mm from top<br>
 													Cylinder hole: Ø15mm (reinforced for 6mm wood)<br>
@@ -493,7 +552,6 @@
 												<p class="image-caption">Figure 8: Hinge joint system and mounting</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 07-hinge-joints.png</div>
 												<div class="step-description">
 													Hinge locations: 6mm from top and bottom<br>
 													Hinge size: 8mm × 4mm (suitable for 6mm wood)<br>
@@ -513,7 +571,6 @@
 												<p class="image-caption">Figure 9: Complete door assembly with dimensions</p>
 											</div>
 											<div class="step-content">
-												<div class="file-reference">File: 08-door-dimensioning.png</div>
 												<div class="step-description">
 													Complete door dimensions: 38mm × 38mm<br>
 													Hardware positioning for 6mm wood<br>
@@ -525,51 +582,40 @@
 									</div>
 								</div>
 
-								<!-- Technical Specifications under Process Documentation -->
-								<header class="major">
-									<h3>Technical Specifications</h3>
-								</header>
-
-								<div class="tech-specs-box">
-									<h4>Complete System Integration</h4>
-									<div class="specs-grid">
-										<div class="spec-item">
-											<div class="spec-label">Frame Dimensions</div>
-											<div class="spec-value">334mm × 211mm × 45mm</div>
+								<!-- CAD Files Download Section -->
+								<div class="box">
+									<h3>CAD Files Download</h3>
+									<p>Download the complete set of CorelDRAW technical drawing files created during this week's CAD implementation process. These files include detailed technical drawings for manufacturing and assembly.</p>
+									
+									<div class="download-grid">										
+										<div class="download-card">
+											<div class="file-name">Frame Construction Drawings</div>
+											<div class="file-description">Main cabinet frame, shelf grid, structural supports, and dimensioning</div>
+											<a href="files/Week4_Frame_Construction.cdr" class="download-btn" download>Download CDR</a>
 										</div>
-										<div class="spec-item">
-											<div class="spec-label">Grid Configuration</div>
-											<div class="spec-value">8 columns × 5 rows</div>
+										
+										<div class="download-card">
+											<div class="file-name">Door Unit Construction</div>
+											<div class="file-description">Door panels, lock mechanisms, hinge systems, and assembly details</div>
+											<a href="files/Week4_Door_Construction.cdr" class="download-btn" download>Download CDR</a>
 										</div>
-										<div class="spec-item">
-											<div class="spec-label">Total Compartments</div>
-											<div class="spec-value">40 individual units</div>
+									</div>
+									
+									<div class="download-grid">
+										<div class="download-card">
+											<div class="file-name">PDF Export - Complete Set</div>
+											<div class="file-description">All drawings in PDF format for easy viewing and printing</div>
+											<a href="files/Week4_Technical_Drawings.pdf" class="download-btn" download>Download PDF</a>
 										</div>
-										<div class="spec-item">
-											<div class="spec-label">Door Size</div>
-											<div class="spec-value">38mm × 38mm each</div>
-										</div>
-										<div class="spec-item">
-											<div class="spec-label">Material</div>
-											<div class="spec-value">6mm wood throughout</div>
-										</div>
-										<div class="spec-item">
-											<div class="spec-label">Internal Compartment</div>
-											<div class="spec-value">~30.5mm × 31.4mm × 39mm</div>
-										</div>
-										<div class="spec-item">
-											<div class="spec-label">Tolerance</div>
-											<div class="spec-value">±0.3mm</div>
-										</div>
-										<div class="spec-item">
-											<div class="spec-label">Weight Class</div>
-											<div class="spec-value">Lightweight construction</div>
+										
+										<div class="download-card">
+											<div class="file-name">DXF Export - Manufacturing</div>
+											<div class="file-description">Vector files in DXF format for CNC machining and laser cutting</div>
+											<a href="files/Week4_Manufacturing_DXF.zip" class="download-btn" download>Download DXF</a>
 										</div>
 									</div>
 								</div>
 
-								<p><strong>Key Features with 6mm Wood:</strong> Lighter weight overall construction, smaller internal compartments due to material thickness, tighter tolerances required (±0.3mm), reinforced joints needed for structural integrity, suitable for smaller items due to reduced compartment size.</p>
-   
 								<!-- Reflection -->
 								<header class="major">
 									<h2 id="reflection-section">Reflection</h2>
